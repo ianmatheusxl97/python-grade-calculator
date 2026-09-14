@@ -6,7 +6,7 @@ This is a simple Python grade calculator that runs in the terminal.
 
 ## What it does
 
-The program asks the user to enter their scores. It then calculates the average, highest score, lowest score, and letter grade. It also checks if the user enters something that is not a valid score.
+The program asks the user to enter their scores. It then determines the average, highest score, lowest score, and letter grade. It also checks if the user enters something that is not a valid score.
 
 ## How to run it
 
