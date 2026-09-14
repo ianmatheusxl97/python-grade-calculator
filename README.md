@@ -1,5 +1,7 @@
 # Grade Calculator
 
+print("Welcome to the Grade Calculator!")
+
 This is a simple Python grade calculator that runs in the terminal.
 
 ## What it does
