@@ -19,3 +19,12 @@ python main.py
 ## What I would add with another week
 
 I would add the ability to save the grades and add grades for multiple students.
+
+
+
+\## Refactoring
+
+
+
+I changed the grade calculator by moving the main functions into a GradeCalculator class. The class keeps the grade calculator functions together and makes the program more organized. The first version had separate functions and more of the program logic outside of them. Using a class makes it easier to keep the grade calculator's functions together and reuse them. One thing that became harder was having to use self when calling the functions inside the class.
+
