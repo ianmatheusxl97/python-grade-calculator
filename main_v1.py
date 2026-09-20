@@ -21,30 +21,34 @@ def get_letter_grade(average):
         return "F"
 
 
-# Gets the student's scores and returns the list.
-def get_scores():
-    scores = []
+# Dictionary to store the information about the grades
+grade_info = {
+    "student": "",
+    "scores": []
+}
 
-    while True:
-        score_input = input("Enter a score (or type 'done' to finish): ")
+grade_info["student"] = input("Enter your name: ")
 
-        if score_input.lower() == "done":
-            break
-        elif score_input.isdigit():
-            score = int(score_input)
+print(f"\nGrade Calculator for {grade_info['student']}")
 
-            if score >= 0 and score <= 100:
-                scores.append(score)
-            else:
-                print(f"{score} is not a valid score. Enter a score from 0 to 100.")
+while True:
+    score_input = input("Enter a score (or type 'done' to finish): ")
+
+    if score_input.lower() == "done":
+        break
+    elif score_input.isdigit():
+        score = int(score_input)
+
+        if score >= 0 and score <= 100:
+            grade_info["scores"].append(score)
         else:
-            print(f"{score_input} is not a valid number. Please try again.")
+            print(f"{score} is not a valid score. Enter a score from 0 to 100.")
+    else:
+        print(f"{score_input} is not a valid number. Please try again.")
 
-    return scores
+if len(grade_info["scores"]) > 0:
+    scores = grade_info["scores"]
 
-
-# Displays the final grade results.
-def display_results(scores):
     average = calculate_average(scores)
     scores.sort()
 
@@ -58,16 +62,5 @@ def display_results(scores):
     print(f"Highest score: {highest}")
     print(f"Lowest score: {lowest}")
     print(f"Letter grade: {letter_grade}")
-
-
-# Main program
-student = input("Enter your name: ")
-
-print(f"\nGrade Calculator for {student}")
-
-scores = get_scores()
-
-if len(scores) > 0:
-    display_results(scores)
 else:
     print("No scores were entered.")
